@@ -1,0 +1,14 @@
+C:\Users\HP\Documents\FMI-WebAppDev\Lab1\Lab1_Tema\bin\Debug\net6.0\Lab1_Activity.exe
+C:\Users\HP\Documents\FMI-WebAppDev\Lab1\Lab1_Tema\bin\Debug\net6.0\Lab1_Activity.deps.json
+C:\Users\HP\Documents\FMI-WebAppDev\Lab1\Lab1_Tema\bin\Debug\net6.0\Lab1_Activity.runtimeconfig.json
+C:\Users\HP\Documents\FMI-WebAppDev\Lab1\Lab1_Tema\bin\Debug\net6.0\Lab1_Activity.dll
+C:\Users\HP\Documents\FMI-WebAppDev\Lab1\Lab1_Tema\bin\Debug\net6.0\Lab1_Activity.pdb
+C:\Users\HP\Documents\FMI-WebAppDev\Lab1\Lab1_Tema\obj\Debug\net6.0\Lab1_Activity.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\HP\Documents\FMI-WebAppDev\Lab1\Lab1_Tema\obj\Debug\net6.0\Lab1_Activity.AssemblyInfoInputs.cache
+C:\Users\HP\Documents\FMI-WebAppDev\Lab1\Lab1_Tema\obj\Debug\net6.0\Lab1_Activity.AssemblyInfo.cs
+C:\Users\HP\Documents\FMI-WebAppDev\Lab1\Lab1_Tema\obj\Debug\net6.0\Lab1_Activity.csproj.CoreCompileInputs.cache
+C:\Users\HP\Documents\FMI-WebAppDev\Lab1\Lab1_Tema\obj\Debug\net6.0\Lab1_Activity.dll
+C:\Users\HP\Documents\FMI-WebAppDev\Lab1\Lab1_Tema\obj\Debug\net6.0\refint\Lab1_Activity.dll
+C:\Users\HP\Documents\FMI-WebAppDev\Lab1\Lab1_Tema\obj\Debug\net6.0\Lab1_Activity.pdb
+C:\Users\HP\Documents\FMI-WebAppDev\Lab1\Lab1_Tema\obj\Debug\net6.0\Lab1_Activity.genruntimeconfig.cache
+C:\Users\HP\Documents\FMI-WebAppDev\Lab1\Lab1_Tema\obj\Debug\net6.0\ref\Lab1_Activity.dll
