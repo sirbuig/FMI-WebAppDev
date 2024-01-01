@@ -1,6 +1,6 @@
 # Laboratory 3
 
-# Databases Pt. 1
+# Databases Pt. 1 
 
 ## Connect a Database to the Project
 
