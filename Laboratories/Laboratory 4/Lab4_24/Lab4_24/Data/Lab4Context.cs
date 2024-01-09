@@ -3,6 +3,7 @@ using Lab4_24.Models.Many_to_Many;
 using Lab4_24.Models.One_to_Many;
 using Lab4_24.Models.One_to_One;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Identity.Client;
 
 namespace Lab4_24.Data
 {
@@ -18,6 +19,11 @@ namespace Lab4_24.Data
         public DbSet<Model5> Models5 { get; set; }
         public DbSet<Model6> Models6 { get; set; }
 
+        // Many to Many
+        public DbSet<Model3> Models3 { get; set; }
+        public DbSet<Model4> Models4 { get; set; }
+        public DbSet<ModelsRelation> ModelsRelations { get; set; }
+
 
         public Lab4Context(DbContextOptions<Lab4Context> options) : base(options) { }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -28,7 +34,22 @@ namespace Lab4_24.Data
             // modelBuilder.Entity<Model2>().HasOne(m2 => m2.Model1).WithMany(m1 => m1.Models2);
 
             // One to One
-            modelBuilder.Entity<Model5>().HasOne(m5 => m5.Model6).WithOne(m6 => m6.Model5).HasForeignKey<Model6>(m6 => m6.Model5);
+            modelBuilder.Entity<Model5>().HasOne(m5 => m5.Model6).WithOne(m6 => m6.Model5).HasForeignKey<Model6>(m6 => m6.Model5Id);
+
+            base.OnModelCreating(modelBuilder);
+
+            // Many to Many
+            modelBuilder.Entity<ModelsRelation>().HasKey(mr => new { mr.Model3Id, mr.Model4Id });
+
+            modelBuilder.Entity<ModelsRelation>()
+                        .HasOne(mr => mr.Model3)
+                        .WithMany(m3 => m3.ModelsRelations)
+                        .HasForeignKey(mr => mr.Model3Id);
+
+            modelBuilder.Entity<ModelsRelation>()
+                        .HasOne(mr => mr.Model4)
+                        .WithMany(m4 => m4.ModelsRelations)
+                        .HasForeignKey(mr => mr.Model4Id);
 
             base.OnModelCreating(modelBuilder);
         }
