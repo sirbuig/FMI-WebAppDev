@@ -37,7 +37,7 @@ namespace Lab4_24.Models.One_to_Many
 }
 ```
 
-## :star: Some explanation
+### :star: Some explanation
 
 ```csharp
 public ICollection<Model2> Models2 { get; set; } = default!;
@@ -64,7 +64,7 @@ namespace Lab4_24.Models.One_to_Many
 }
 ```
 
-## :star: Some other explanation
+### :star: Some other explanation
 
 One-to-Many Relationship:
 
@@ -164,7 +164,7 @@ namespace Lab4_24.Models.Many_to_Many
 }
 ```
 
-## :bulb: In many-to-many relationships, a join entity is often used to represent the table that holds the foreign keys to the two entities that form the many-to-many relationship.
+### :bulb: In many-to-many relationships, a join entity is often used to represent the table that holds the foreign keys to the two entities that form the many-to-many relationship.
 
 In `ModelsRelation.cs`:
 
@@ -246,9 +246,31 @@ namespace Lab4_24.Data
 }
 ```
 
-## :bulb: Before proceeding with the migrations, make sure to build the project to see if it has any errors.
+### :bulb: Before proceeding with the migrations, make sure to build the project to see if it has any errors.
 
 The migrations are just like in Laboratory 3.
+
+---
+
+## DTOs
+
+:warning: to be given an explanation
+
+In the `Models` folder add a new folder `DTOs`, then in that folder create a new class `Model1Dto.cs`.
+
+In `Model1Dto.cs`:
+
+```csharp
+namespace Lab4_24.Models.DTOs
+{
+    public class Model1Dto
+    {
+        public Guid Id { get; set; }
+        public string Name { get; set; }
+    }
+}
+
+```
 
 ---
 
@@ -258,6 +280,8 @@ In `DatabaseController.cs`:
 
 ```csharp
 using Lab4_24.Data;
+using Lab4_24.Models.DTOs;
+using Lab4_24.Models.One_to_Many;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -279,6 +303,53 @@ namespace Lab4_24.Controllers
         {
             return Ok(await _lab4Context.Models1.ToListAsync());
         }
+
+        [HttpPost("model1")]
+        public async Task<IActionResult> Create(Model1Dto model1Dto)
+        {
+            var newModel1 = new Model1
+            {
+                Id = Guid.NewGuid(),
+                Name = model1Dto.Name
+            };
+
+            // adding new item
+            await _lab4Context.AddAsync(newModel1);
+
+            // saving the item is required otherwise the object is not commited to the database
+            await _lab4Context.SaveChangesAsync();
+
+            return Ok(newModel1);
+        }
+
+        [HttpPost("update")]
+        public async Task<IActionResult> Update(Model1Dto model1Dto)
+        {
+            Model1 model1ById = await _lab4Context.Models1.FirstOrDefaultAsync(x => x.Id == model1Dto.Id);
+
+            if (model1ById == null)
+            {
+                return BadRequest($"Object with id: {model1Dto.Id} does not exist in the database");
+            }
+
+            model1ById.Name = model1Dto.Name;
+
+            // update
+            _lab4Context.Update(model1ById);
+
+            // commit
+            await _lab4Context.SaveChangesAsync();
+
+            return Ok(model1ById);
+        }
     }
 }
 ```
+
+### :bulb: Run the project and test the methods in Swagger UI.
+
+---
+
+## :link: Resources
+
+:warning: to be added ...

@@ -1,6 +1,6 @@
 # Laboratory 3
 
-# Databases Pt. 1 
+# Databases Pt. 1
 
 ## Connect a Database to the Project
 
@@ -343,7 +343,7 @@ Run the Application and then Try out the `/api/Database` to see the values in th
 ]
 ```
 
-### :bulb: Resources
+## :link: Resources
 
 - https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/linq/-basic-linq-query-operations
 - https://www.entityframeworktutorial.net/efcore/fluent-api-in-entity-framework-core.aspx
