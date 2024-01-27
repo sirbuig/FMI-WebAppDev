@@ -254,7 +254,11 @@ The migrations are just like in Laboratory 3.
 
 ## DTOs
 
-:warning: to be given an explanation
+### :star: `DTO` stands for "Data Transfer Object". It is a design pattern used in software development to transfer data between different layers or components of an application.
+
+### :star: The primary purpose of a DTO is to encapsulate data and transport it from one part of the application to another without exposing the underlying data structures or implementation details.
+
+### :star: DTOs are commonly used in client-server architectures, where data needs to be exchanged between the client-side and server-side components. They help in decoupling the data representation from the business logic or database schema, providing a clear separation of concerns.
 
 In the `Models` folder add a new folder `DTOs`, then in that folder create a new class `Model1Dto.cs`.
 
@@ -352,4 +356,6 @@ namespace Lab4_24.Controllers
 
 ## :link: Resources
 
-:warning: to be added ...
+- https://www.entityframeworktutorial.net/efcore/fluent-api-in-entity-framework-core.aspx
+- https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/linq/standard-query-operators-overview
+- https://www.telerik.com/blogs/dotnet-basics-dto-data-transfer-object
